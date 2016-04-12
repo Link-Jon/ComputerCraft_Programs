@@ -226,6 +226,7 @@ local funMessages = {
 	"I/O Buffer error at logical block 6005782",
 	"57 fps, 133 Chunk updates",
 	"Press any key to continue.",
+	"-----BEGIN PGP SIGNED MESSAGE-----",
 	
 	--Generic/Random
 	"Hello.",
@@ -367,16 +368,16 @@ local funMessages = {
 	"I'll sing you a song!",
 
 	--
-	"The man of a thousand voices is talking perfectly loud",
-	"Nobody ever hears him",
-	"He never listens to them",
+	"The man of a thousand voices is talking perfectly loud!",
+	"Nobody ever hears him!",
+	"He never listens to them!",
 	
 	--
 	"Here comes old flatop!",
 	"He come groovin' up slowly!",
 
 	--
-	"It's coming to take you away",
+	"It's coming to take you away!",
 	
 	--
 	"Children at your feet!",
@@ -385,7 +386,8 @@ local funMessages = {
 	"Lets all get up and dance to a song!",
 	
 	--
-	"Don't let me down",
+	"Don't let me down!",
+	
 	
 
 	--Pink Floyd
@@ -500,7 +502,191 @@ local funMessages = {
 	
 	--
 	"Hey you",
+	
+	--
+	"You! Yes, you!",
+	"Stand still laddie!",
+	
+	--
+	"Run to the bedroom!",
+	"The suitcase on the left!",
 
+	--
+	"They must have taken my marbles away!",
+	"Crazy!",
+	"Toys in the attic!",
+	
+	
+	
+	--Talking Heads
+	--
+	"Face up to the facts!",
+	"Can't relaz!",
+	"Don't touch me!",
+	"I'm a live wire!",
+	"Qu'est-ce que c'est?",
+	
+	--
+	"Nothing ever happens!",
+	
+	--
+	"You can talk just like me!",
+	
+	--
+	"What a bad picture!",
+	"Don't get upset!",
+	"It's not a major disaster!",
+	"I don't know whats the matter!",
+	"I don't know why you bother!",
+	"The way it seems to me...",
+	"Making up their own shows!",
+	"Putting them on TV!",
+	
+	--
+	"What's the matter with him?",
+	
+	--
+	"Watch out!",
+	"You might get what you're after!",
+	"Cool babies!",
+	"Strange but not a stranger!",
+	"I'm an ordinary guy!",
+	"Hold tight!",
+	"Heres your ticker, pack your bag!",
+	"Fighting fire with fire!",
+	
+	--
+	"Packed up and ready to go!",
+	"A place where nobody knows!",
+	"I'm getting used to it now!",
+	"This ain't no party!",
+	"This ain't no disco!",
+	"This ain't no foolin' around!",
+	"Transmit the message!",
+	"Everything's ready to roll!",
+	
+	--
+	"Wait a minute!",
+	"Everybody!",
+	"Get in line!",
+	"Nothing can come between us!",
+	"Nothing gets you down!",
+	"Nothing strikes your fancy!",
+	"We have nothing in our pockets!",
+	
+	--
+	"Let me tell you a story!",
+	"Let's go!",
+	
+	--
+	"I'm dressed up so nice!",
+	"I'm doing my best!",
+	"I'm Starting over!",
+	"Starting over in another place!",
+	
+	--
+	"Home is where I want to be!",
+	"I love the passing of time!",
+	"Did I find you or you find me?",
+	"You got a face with a view!",
+	
+	---
+	"Letting the days go by!",
+	"How do I work this?",
+	"Same as it ever was!",
+	
+	--
+	"I'm gonna have some fun!",
+	
+	--
+	"Who took the money?",
+	"Who took the money away?",
+	"Wake up and wonder!",
+	
+	--
+	"I don't know why you treat me so bad!",
+	
+	--
+	"Lost my shape!",
+	"Trying to act casual!",
+	
+	--
+	"Hands of a government man!",
+	"I'm a tumbler!",
+	
+	--
+	"I wanna talk!",
+	"I wanna talk as much as I want!",
+	"It's a hard logic!",
+	
+	--
+	"Chilly willy!",
+	
+	--
+	"I need something to change your mind!",
+	
+	--
+	"I'm wearking fur pajamas!",
+	"Speak up!",
+	
+	--David Bowie
+	--
+	"It's no game!",
+	
+	--
+	"Scary monsters!",
+	"Super creeps!",
+	
+	--
+	"Fashion!",
+	"Beep Beep!",
+	
+	--
+	"Take your protein pills!",
+	"Put your helmet on!",
+	"Commencing countdown!",
+	"Engines on!",
+	"You've really made the grade!",
+	"Whose shirts do you wear?",
+	"Far above the world!",
+	
+	--
+	"I'm and alligator!",
+	"I'm a moma-papa coming for you!",
+	
+	--
+	"Hang on to yourself!",
+	
+	--
+	"I look into your eyes and I know you won't kill me!",
+	
+	
+	
+	--Jethro Tull
+	--
+	"Palm tree apartments!",
+	"Thats alright by me!",
+	
+	--
+	"The shuffling madness!",
+	
+	--
+	"Sitting on the park bench!",
+	"Greasy fingers smearing shabby clothes!",
+	"Drying in the cold sun!",
+	"Feeling like a dead duck!",
+	
+	--
+	"Really don't mind if you sit this one out!",
+	"My words are a whisper!",
+	"I may make you feel, but I can't make you think",
+	"The youngest of the famliy!",
+	"Moving with authority!",
+	"Rings upon your fingers!",
+	
+	--
+	"Nothing is easy!",
+	
 	
 	--Elton John
 	--
@@ -530,6 +716,12 @@ local funMessages = {
 	"Tonight!",
 	"Im gonna have myself a real good time!",
 	
+	--
+	"Do you feel good?", 
+	"Are you satisfied?",
+	"Is your conscience all right?",
+	"Does it plague you at night?",
+	
 	
 	--ELO
 	--
@@ -549,6 +741,20 @@ local funMessages = {
 	
 	
 	
+	--Black Sabbath
+	--
+	"What is this?",
+	"Figure in black!",
+	
+	--
+	"Misty morning, clouds in the sky!",
+	
+	--
+	"Late last night!",
+	"You gotta believe me!",
+	
+	
+	
 	--Billy Joel
 	--
 	"It's nine o' clock on a Saturday",
@@ -560,6 +766,23 @@ local funMessages = {
 	--
 	"Kinghts in armor!",
 	"Something about a queen",
+	
+	--
+	"A modern day warrior!",
+	"Mean, mean stride!",
+	"Mean, mean pride!",
+	"His mind is not for rent!",
+	"Don't put him down as arrogant!",
+	
+	--
+	"I feel free!",
+	
+	--
+	"You can checkout anytime you like!",
+	"You can never leave!",
+	
+	--
+	"Bird is the word!",
 	
 	--
 	"The rain exploded with a mighty crash",
