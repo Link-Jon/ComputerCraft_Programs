@@ -29,6 +29,7 @@ end
 
 turtle.select(1)
 
+print("Starts by digging block above")
 print("Enter distance")
 distance=io.read()
 
