@@ -2,10 +2,10 @@
 -- ...
 -- Helper functions and whatnots
 -- Mostly by Josh, if not is probably noted
--- 
+--
 -- os.loadAPI("JoshAPI")
 
-version = 0.4 --Very arbitrary 
+version = 0.4 --Very arbitrary
 
 --For prevent and allow termination
 osPullEvent = os.pullEvent
@@ -21,7 +21,7 @@ function refuel() --Turtle
 	if fuelLevel == "unlimited" or fuelLevel > 0 then
 		return
 	end
-	
+
 	local function tryRefuel()
 		for n=1,16 do
 			if turtle.getItemCount(n) > 0 then
@@ -35,7 +35,7 @@ function refuel() --Turtle
 		turtle.select(1)
 		return false
 	end
-	
+
 	if not tryRefuel() then
 		print( "Add more fuel to continue." )
 		while not tryRefuel() do
@@ -52,7 +52,7 @@ end
 
 function forward(num) --Turtle
 	if not turtle then return false end
-	
+
 	refuel()
 	if num == nil or num <= 0 then num = 1 end
 	for x = 1, num do
@@ -66,7 +66,7 @@ end
 
 function back(num) --Turtle
 	if not turtle then return false end
-	
+
 	refuel()
 	if num == nil or num <= 0 then num = 1 end
 	for x = 1, num do
@@ -76,12 +76,12 @@ function back(num) --Turtle
 			back()
 		end
 	end
-	
+
 end
 
 function up(num) --Turtle
 	if not turtle then return false end
-	
+
 	refuel()
 	if num == nil or num <= 0 then num = 1 end
 	for x = 1, num do
@@ -95,7 +95,7 @@ end
 
 function down(num) --Turtle
 	if not turtle then return false end
-	
+
 	refuel()
 	if num == nil or num <= 0 then num = 1 end
 	for x = 1, num do
@@ -109,7 +109,7 @@ end
 
 function dropThings() --Turtle
 	if not turtle then return false end
-	
+
 	for i=1,16 do
 		turtle.select(i)
 		turtle.drop()
@@ -149,14 +149,14 @@ function getPeripherals(pType)
 	local foundPs = {} --Contains number and side of peripheral
 	local foundType = {} --Contains number and side of specific peripherals
 	local sides = redstone.getSides() --Top, Right, Front, etc
-	
+
 	--Get peripherals on sides
 	for s=1,#sides do
 		if peripheral.isPresent(sides[s]) then
 			foundPs[#foundPs+1] = sides[s]
 		end
 	end
-	
+
 	--Get peripherals on wired modems
 	for p=1,#foundPs do
 		if peripheral.getType(foundPs[p]) == "modem" then
@@ -169,7 +169,7 @@ function getPeripherals(pType)
 			end
 		end
 	end
-	
+
 	if pType == nil then --Not looking for specific type
 		return foundPs
 	else
@@ -214,7 +214,7 @@ local funMessages = {
 	"System Status: Missing some startup messages",
 	"System Status: N/A",
 	"System Status: Redstone error detected",
-	"Craft OS [Version number]",
+	"CraftOS [Version number]",
 	"No bootable device -- insert boot disk and press any key",
 	"The SMART hard disk check has detected an imminent failure. To ensure not data loss, please backup the content immediately and run the Hard Disk Test in System Diagnostics.",
 	"F2 - System Diagnostics",
@@ -227,7 +227,7 @@ local funMessages = {
 	"57 fps, 133 Chunk updates",
 	"Press any key to continue.",
 	"-----BEGIN PGP SIGNED MESSAGE-----",
-	
+
 	--Generic/Random
 	"Hello.",
 	"0110100001101001",
@@ -276,12 +276,12 @@ local funMessages = {
 	"This is not the startup message you are looking for.",
 	"Seeking Admin...",
 	"0101000101110101011010010111001100100000011000110111010101110011011101000110111101100100011010010110010101110100001000000110100101110000011100110110111101110011001000000110001101110101011100110111010001101111011001000110010101110011",
-	
+
 	--Harry Potter
 	"I will have order.",
 	"I must not tell lies",
 	"A lonely, winding road at twilight",
-	
+
 	--Song References
 	--Beatles
 	--
@@ -300,7 +300,7 @@ local funMessages = {
 	"Picture yourself in a boat in a river!",
 	"Tangerine trees!",
 	"Marmalade skies!",
-	"You hear some one call you",
+	"You hear someone call you!",
 	"Answer quite slowly!",
 	"Kaleidoscope eyes!",
 	"Yellow and green!",
@@ -311,7 +311,7 @@ local funMessages = {
 	"With diamonds!",
 	"A bridge by a fountain!",
 	"Rocking horse people!",
-	
+
 	--
 	"Desmond has his barrow in the marketplace",
 	"Molly is the singer in a band.",
@@ -327,7 +327,7 @@ local funMessages = {
 	"See how they fly!",
 	"Like lucy in the sky!",
 	"Don't you think the joker laughs at you?",
-	
+
 	--
 	"Look at all the people!",
 	"Where do they all come from?",
@@ -343,14 +343,14 @@ local funMessages = {
 	"No one was saved!",
 
 	--
-	"Get back",
+	"Get back!",
 	"Where you once belonged!",
 	"Thought he was a loner!",
 	"He knew it couldn't last",
 	"Left his home!",
-	
+
 	--
-	"Let me tell you how it will be",
+	"Let me tell you how it will be!",
 	"There's one for you, nineteen for me!",
 	"I'm the taxman!",
 	"Does five percent appear too small?",
@@ -360,7 +360,7 @@ local funMessages = {
 	"I'll tax the heat!",
 	"I'll tax your feet!",
 	"Don't ask me what I want it for!",
-	
+
 	--
 	"What would you think?",
 	"I sang out of tune!",
@@ -371,35 +371,35 @@ local funMessages = {
 	"The man of a thousand voices is talking perfectly loud!",
 	"Nobody ever hears him!",
 	"He never listens to them!",
-	
+
 	--
 	"Here comes old flatop!",
 	"He come groovin' up slowly!",
 
 	--
 	"It's coming to take you away!",
-	
+
 	--
 	"Children at your feet!",
-	
+
 	--
 	"Lets all get up and dance to a song!",
-	
+
 	--
 	"Don't let me down!",
-	
-	
+
+
 
 	--Pink Floyd
 	--
 	"Come in here!",
 	"Dear boy!",
-	"Have a cigar",
-	"You're gonna go far",
-	"You're gonna fly high",
-	"You're never gonna die",
-	"You're gonna make it if you try",
-	"They're gonna love you",
+	"Have a cigar!",
+	"You're gonna go far!",
+	"You're gonna fly high!",
+	"You're never gonna die!",
+	"You're gonna make it if you try!",
+	"They're gonna love you!",
 	"I've always had a deep respect!",
 	"Most sincerely!",
 	"The band is just fantastic!",
@@ -424,7 +424,7 @@ local funMessages = {
 	"When I was a child!",
 
 	--
-	"Wish you were here",
+	"Wish you were here!",
 	"So...",
 	"You think you can tell?",
 	"Blue skys!",
@@ -457,7 +457,7 @@ local funMessages = {
 	"The song is over!",
 	"I like to be here when I can",
 	"Beside the fire!",
-	
+
 	--
 	"Us and them!",
 	"We're only ordinary men!",
@@ -466,7 +466,7 @@ local funMessages = {
 	"Forward!",
 	"The front rank died!",
 	"The general sat!",
-	"The lines on the map",
+	"The lines on the map!",
 	"From side to side!",
 	"Black and blue!",
 	"Who knows which is which?",
@@ -480,7 +480,7 @@ local funMessages = {
 	"Out of my way!",
 	"Its a busy day!",
 	"I've got things on my mind!",
-	
+
 
 	--
 	"Money!",
@@ -491,22 +491,22 @@ local funMessages = {
 	"Think I'll buy me a football team!",
 	"So they say!",
 	"I need a lear jet!",
-	
+
 	--
-	"Welcome, my son",
-	"Welcome to the machine",
+	"Welcome, my son!",
+	"Welcome to the machine!",
 	"Where have you been?",
-	"It's alright",
+	"It's alright!",
 	"We know where you've been!",
 	"You know you're nobody's fool!",
-	
+
 	--
 	"Hey you",
-	
+
 	--
 	"You! Yes, you!",
 	"Stand still laddie!",
-	
+
 	--
 	"Run to the bedroom!",
 	"The suitcase on the left!",
@@ -515,9 +515,9 @@ local funMessages = {
 	"They must have taken my marbles away!",
 	"Crazy!",
 	"Toys in the attic!",
-	
-	
-	
+
+
+
 	--Talking Heads
 	--
 	"Face up to the facts!",
@@ -525,13 +525,13 @@ local funMessages = {
 	"Don't touch me!",
 	"I'm a live wire!",
 	"Qu'est-ce que c'est?",
-	
+
 	--
 	"Nothing ever happens!",
-	
+
 	--
 	"You can talk just like me!",
-	
+
 	--
 	"What a bad picture!",
 	"Don't get upset!",
@@ -541,10 +541,10 @@ local funMessages = {
 	"The way it seems to me...",
 	"Making up their own shows!",
 	"Putting them on TV!",
-	
+
 	--
 	"What's the matter with him?",
-	
+
 	--
 	"Watch out!",
 	"You might get what you're after!",
@@ -554,7 +554,7 @@ local funMessages = {
 	"Hold tight!",
 	"Heres your ticker, pack your bag!",
 	"Fighting fire with fire!",
-	
+
 	--
 	"Packed up and ready to go!",
 	"A place where nobody knows!",
@@ -564,7 +564,7 @@ local funMessages = {
 	"This ain't no foolin' around!",
 	"Transmit the message!",
 	"Everything's ready to roll!",
-	
+
 	--
 	"Wait a minute!",
 	"Everybody!",
@@ -573,74 +573,79 @@ local funMessages = {
 	"Nothing gets you down!",
 	"Nothing strikes your fancy!",
 	"We have nothing in our pockets!",
-	
+
 	--
 	"Let me tell you a story!",
 	"Let's go!",
-	
+
 	--
 	"I'm dressed up so nice!",
 	"I'm doing my best!",
-	"I'm Starting over!",
+	"I'm starting over!",
 	"Starting over in another place!",
-	
+
 	--
 	"Home is where I want to be!",
 	"I love the passing of time!",
 	"Did I find you or you find me?",
 	"You got a face with a view!",
-	
+
 	---
 	"Letting the days go by!",
 	"How do I work this?",
 	"Same as it ever was!",
-	
+
 	--
 	"I'm gonna have some fun!",
-	
+
 	--
 	"Who took the money?",
 	"Who took the money away?",
 	"Wake up and wonder!",
-	
+
 	--
 	"I don't know why you treat me so bad!",
-	
+
 	--
 	"Lost my shape!",
 	"Trying to act casual!",
-	
+
 	--
 	"Hands of a government man!",
 	"I'm a tumbler!",
-	
+
 	--
 	"I wanna talk!",
 	"I wanna talk as much as I want!",
 	"It's a hard logic!",
-	
+
 	--
 	"Chilly willy!",
-	
+
 	--
 	"I need something to change your mind!",
-	
+
 	--
 	"I'm wearking fur pajamas!",
 	"Speak up!",
+
+	
+	
+	
+	
 	
 	--David Bowie
 	--
 	"It's no game!",
-	
+
 	--
 	"Scary monsters!",
 	"Super creeps!",
-	
+
 	--
 	"Fashion!",
 	"Beep Beep!",
-	
+
 	--
 	"Take your protein pills!",
 	"Put your helmet on!",
@@ -649,33 +654,48 @@ local funMessages = {
 	"You've really made the grade!",
 	"Whose shirts do you wear?",
 	"Far above the world!",
-	
+
 	--
-	"I'm and alligator!",
+	"I'm an alligator!",
 	"I'm a moma-papa coming for you!",
-	
+
 	--
 	"Hang on to yourself!",
-	
+
 	--
 	"I look into your eyes and I know you won't kill me!",
 	
+	--
+	"You remind me of the babe!",
+	"What babe?",
+	"The babe with the power!",
+	"What power?",
+	"The power of voodoo!",
+	"Who do?",
+	"You do!",
+	"Do what?",
+	"I saw my baby!",
+	"Crying hard as babe could cry!",
+	"What could I do?",
+	"Nobody knew!",
 	
-	
+
+
+
 	--Jethro Tull
 	--
 	"Palm tree apartments!",
 	"Thats alright by me!",
-	
+
 	--
 	"The shuffling madness!",
-	
+
 	--
 	"Sitting on the park bench!",
 	"Greasy fingers smearing shabby clothes!",
 	"Drying in the cold sun!",
 	"Feeling like a dead duck!",
-	
+
 	--
 	"Really don't mind if you sit this one out!",
 	"My words are a whisper!",
@@ -683,46 +703,46 @@ local funMessages = {
 	"The youngest of the famliy!",
 	"Moving with authority!",
 	"Rings upon your fingers!",
-	
+
 	--
 	"Nothing is easy!",
-	
-	
+
+
 	--Elton John
 	--
 	"Hey, kids!",
 	"Share the news together!",
 	"Known to change the weather!",
-	"Solid walls of sound!",    
+	"Solid walls of sound!",
 	"Have you seen them yet?",
-	
+
 	--
 	"Can't lock me in your penthouse!",
-	
-	
+
+
 	--Queen
 	--
 	"Is this the real life?",
-	"Look up to the sky",
-	
+	"Look up to the sky!",
+
 	--
 	"I want to ride my bicicle!",
 	"Where I like!",
-	
+
 	--
 	"Listen to the wise man!",
-	
+
 	--
 	"Tonight!",
 	"Im gonna have myself a real good time!",
-	
+
 	--
-	"Do you feel good?", 
+	"Do you feel good?",
 	"Are you satisfied?",
 	"Is your conscience all right?",
 	"Does it plague you at night?",
-	
-	
+
+
 	--ELO
 	--
 	"Mr. Blue Sky!",
@@ -732,65 +752,65 @@ local funMessages = {
 	"Where did we go wrong!",
 	"Hey you with the pretty face!",
 	"Welcome to the human race!",
-	
+
 	--
 	"She cried to the southern wind!",
 	"Headin' for a Showdown!",
 	"It's raining!",
 	"All over the world!",
-	
-	
-	
+
+
+
 	--Black Sabbath
 	--
 	"What is this?",
 	"Figure in black!",
-	
+
 	--
 	"Misty morning, clouds in the sky!",
-	
+
 	--
 	"Late last night!",
 	"You gotta believe me!",
-	
-	
-	
+
+
+
 	--Billy Joel
 	--
-	"It's nine o' clock on a Saturday",
-	"The regular crowd shuffles in",
-	"He's quick with a joke",
-	
-	
+	"It's nine o' clock on a Saturday!",
+	"The regular crowd shuffles in!",
+	"He's quick with a joke!",
+
+
 	--Other
 	--
 	"Kinghts in armor!",
-	"Something about a queen",
-	
+	"Something about a queen!",
+
 	--
 	"A modern day warrior!",
 	"Mean, mean stride!",
 	"Mean, mean pride!",
 	"His mind is not for rent!",
 	"Don't put him down as arrogant!",
-	
+
 	--
 	"I feel free!",
-	
+
 	--
 	"You can checkout anytime you like!",
 	"You can never leave!",
-	
+
 	--
 	"Bird is the word!",
-	
+
 	--
 	"The rain exploded with a mighty crash",
 	"We fell into the sun!",
-	
+
 	--
 	"Writing on the wall!",
-	
+
 	--
 	"Could you go along with someone like me?",
 	"I did before!"
@@ -804,24 +824,29 @@ function cleanMonitors(mons)
 	for x=1, #mons do
 		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
 			mon=peripheral.wrap(mons[x])
-			term.redirect(mon)
-			
+			local old = term.redirect(mon)
+
 			cleanTerm()
-			term.restore()
+			
+			term.redirect(old)
 		end
 	end
 end
 
-function monitorPrint(mons, text)
+function monitorsPrint(mons, text)
 	for x=1, #mons do
 		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
 			mon=peripheral.wrap(mons[x])
-			term.redirect(mon)
-			
-			print(text)
-			term.restore()
+			monitorPrint(mon, text)
 		end
 	end
+end
+
+function monitorPrint(mon, text)
+	local old = term.redirect(mon)
+
+	print(text)
+	term.redirect(old)
 end
 
 function pause()
