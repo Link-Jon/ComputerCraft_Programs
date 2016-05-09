@@ -10,9 +10,8 @@ version = 0.4 --Very arbitrary
 --For prevent and allow termination
 osPullEvent = os.pullEvent
 
-math.randomseed(os.time())
+math.randomseed(os.time() * os.day() * math.random())
 math.random(); math.random(); math.random();
-math.randomseed(math.random())
 math.random(); math.random(); math.random();
 
 function getVersion()
