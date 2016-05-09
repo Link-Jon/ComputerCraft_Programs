@@ -10,6 +10,11 @@ version = 0.4 --Very arbitrary
 --For prevent and allow termination
 osPullEvent = os.pullEvent
 
+math.randomseed(os.time())
+math.random(); math.random(); math.random();
+math.randomseed(math.random())
+math.random(); math.random(); math.random();
+
 function getVersion()
 	return version
 end
@@ -197,6 +202,7 @@ function password(pass)
 end
 
 function choose(t)
+	
 	return t[math.random(#t)]
 end
 
@@ -224,6 +230,7 @@ local funMessages = {
 	"Press 'I' to enter interactive startup.",
 	"Done (0.110s)",
 	"I/O Buffer error at logical block 6005782",
+	"OpenGL Error: 1286 (Invalid framebuffer operation)",
 	"57 fps, 133 Chunk updates",
 	"Press any key to continue.",
 	"-----BEGIN PGP SIGNED MESSAGE-----",
@@ -271,6 +278,8 @@ local funMessages = {
 
 	--References
 	"Beam me up, scotty!",
+	"Engage.",
+	"Make it so.",
 	"WARNING - Missile inbound!",
 	"Startup messages over 9000! (Not really)",
 	"This is not the startup message you are looking for.",
@@ -279,7 +288,7 @@ local funMessages = {
 
 	--Harry Potter
 	"I will have order.",
-	"I must not tell lies",
+	"I must not tell lies.",
 	"A lonely, winding road at twilight",
 
 	--Song References
@@ -346,7 +355,7 @@ local funMessages = {
 	"Get back!",
 	"Where you once belonged!",
 	"Thought he was a loner!",
-	"He knew it couldn't last",
+	"He knew it couldn't last!",
 	"Left his home!",
 
 	--
@@ -512,14 +521,21 @@ local funMessages = {
 	"The suitcase on the left!",
 
 	--
+	"Good evening!",
+	"Caught red-handed!",
+	"Showing feelings!",
+	"An almost human nature!",
+	"This will not do.",
 	"They must have taken my marbles away!",
 	"Crazy!",
 	"Toys in the attic!",
 
 
 
+	
 	--Talking Heads
 	--
+	--Stop Making Sense
 	"Face up to the facts!",
 	"Can't relaz!",
 	"Don't touch me!",
@@ -552,7 +568,7 @@ local funMessages = {
 	"Strange but not a stranger!",
 	"I'm an ordinary guy!",
 	"Hold tight!",
-	"Heres your ticker, pack your bag!",
+	"Heres your ticket, pack your bag!",
 	"Fighting fire with fire!",
 
 	--
@@ -563,6 +579,7 @@ local funMessages = {
 	"This ain't no disco!",
 	"This ain't no foolin' around!",
 	"Transmit the message!",
+	"To the receiver!",
 	"Everything's ready to roll!",
 
 	--
@@ -572,6 +589,17 @@ local funMessages = {
 	"Nothing can come between us!",
 	"Nothing gets you down!",
 	"Nothing strikes your fancy!",
+	"We don't have to wait!",
+	"Everything looks impressive!",
+	"Do not be deceived!",
+	"No one makes a monkey out of me!",
+	"Lie on our backs!",
+	"Feet in the air!",
+	"Rest and relaxation!",
+	"Snap into position!",
+	"Step out of line!",
+	"Check this out!",
+	"Don't be so slick!",
 	"We have nothing in our pockets!",
 
 	--
@@ -602,6 +630,8 @@ local funMessages = {
 	"Who took the money?",
 	"Who took the money away?",
 	"Wake up and wonder!",
+	"What was the place?",
+	"What was the name?",
 
 	--
 	"I don't know why you treat me so bad!",
@@ -610,28 +640,102 @@ local funMessages = {
 	"Lost my shape!",
 	"Trying to act casual!",
 
+	--Remain in Light
 	--
 	"Hands of a government man!",
 	"I'm a tumbler!",
+	
+	--
+	"The overload!",
 
+	--77
 	--
 	"I wanna talk!",
 	"I wanna talk as much as I want!",
 	"It's a hard logic!",
 
+	--Naked
+	--
+	"If this is paradise, I wish I had a lawnmower!",
+	"As things fell apart, nobody paid much attention!",
+	"We used to microwave!",
+	"I can't get used to this lifestyle!",
+	
 	--
 	"Chilly willy!",
+	"Mommy Daddy You and I!",
+	"Driving!",
+	"Keep driving!",
+	"Driving with all of our might!",
+	"Saying it don't make it so!",
+	
+	--
+	"Falling!",
+	"Gonna drop like a stone!",
+	"Falling through the atmosphere!",
+	"A warm afternoon!",
+	"Please hold me!",
+	"It's a dangerous life!",
+	"Let's get out of here!",
+	"I'm scared!",
+	"Nighttime in New York!",
+	"It's weird!",
+	"If you're looking for trouble, that's what you will find!",
+	"Kills you in your sleep!",
+	"Criminals that never broke no laws!",
+	"Furniture with legs!",
+	"Going home!",
+	"Back where I belong!",
+	"To stay!",
+	"Rays of light!",
+	"Birds travel together!",
+	"Brids follow the sun!",
 
+	--Fear of music
 	--
 	"I need something to change your mind!",
+	
+	--
+	"Find myself a city!",
+	"Find myself a city to live in!",
 
+	--True Stories
 	--
 	"I'm wearking fur pajamas!",
 	"Speak up!",
-
+	"I can't hear you!",
+	"Up on this mountain top!",
+	"Check out mister businessman!",
+	"On the way to the stock exchange!",
+	"Things fall apart!",
+	"It's scientific!",
+	"Spending all of my money and time!",
+	"Wild Wild Life!",
 	
-	
-	
+	--Little Creatures
+	--
+	"We know where we're going!",
+	"We don't know where we've been!",
+	"We know what we're knowing!",
+	"We can't say what we've seen!",
+	"We're not little children!",
+	"We know what we want!",
+	"The future is certain!",
+	"Give us time to work it out!",
+	"We're on a road to nowhere!",
+	"Come on inside!",
+	"Takin' that ride to nowhere!",
+	"We'll take that ride!",
+	"Feeling okay this morning!",
+	"You know!",
+	"We're on the road to paradise!",
+	"Here we go!",
+	"There's a city in my mind1",
+	"Come along and take that ride!",
+	"It's alright!",
+	"It's very far away!",
+	"Growing day by day!",
+	"They'll make a fool of you!",
 	
 	
 	--David Bowie
@@ -679,6 +783,19 @@ local funMessages = {
 	"What could I do?",
 	"Nobody knew!",
 	
+	--
+	"Fame!",
+	
+	--
+	"Put on your red shoes!",
+	"Dance the blues!",
+	
+	--
+	"Lost my job!",
+	"I think she's dancing!",
+	"I am a DJ!",
+	"I am what I play!",
+	
 
 
 
@@ -699,7 +816,7 @@ local funMessages = {
 	--
 	"Really don't mind if you sit this one out!",
 	"My words are a whisper!",
-	"I may make you feel, but I can't make you think",
+	"I may make you feel, but I can't make you think!",
 	"The youngest of the famliy!",
 	"Moving with authority!",
 	"Rings upon your fingers!",
@@ -718,6 +835,9 @@ local funMessages = {
 
 	--
 	"Can't lock me in your penthouse!",
+	
+	--
+	"Mars isn't the kind of place to raise your kids!",
 
 
 	--Queen
@@ -758,6 +878,10 @@ local funMessages = {
 	"Headin' for a Showdown!",
 	"It's raining!",
 	"All over the world!",
+	
+	--
+	"You're looking good!",
+	"Just like a snake in the grass!",
 
 
 
@@ -771,6 +895,7 @@ local funMessages = {
 
 	--
 	"Late last night!",
+	"I got a fright!",
 	"You gotta believe me!",
 
 
@@ -787,6 +912,16 @@ local funMessages = {
 	"Kinghts in armor!",
 	"Something about a queen!",
 
+	--
+	"Is it any wonder I'm not crazy?",
+	"Is it any wonder I'm not a criminal?",
+	"Is it any wonder I'm not in jail?",
+	"Is it any wonder I'm not the president?",
+	"Is it any wonder I've got too much time on my hands!",
+	"Ticking away with my sanity!",
+	"I can solve all the world's problems, without even trying!",
+	"The fun never ends!",
+	
 	--
 	"A modern day warrior!",
 	"Mean, mean stride!",
@@ -805,7 +940,7 @@ local funMessages = {
 	"Bird is the word!",
 
 	--
-	"The rain exploded with a mighty crash",
+	"The rain exploded with a mighty crash!",
 	"We fell into the sun!",
 
 	--
