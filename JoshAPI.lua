@@ -658,7 +658,7 @@ local funMessages = {
 	"Who took the money?",
 	"Who took the money away?",
 	"It's always showtime!",
-	"Here at the edge of the stage"!
+	"Here at the edge of the stage!",
 	"Wake up and wonder!",
 	"What was the place?",
 	"What was the name?",
