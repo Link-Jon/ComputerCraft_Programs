@@ -12,7 +12,6 @@ osPullEvent = os.pullEvent
 
 math.randomseed(os.time() * os.day() * math.random())
 math.random(); math.random(); math.random();
-math.random(); math.random(); math.random();
 
 function getVersion()
 	return version
@@ -484,7 +483,7 @@ local funMessages = {
 	"Haven't you heard?",
 	"Its a battle of words!",
 	"Listen, son!",
-	"There's room for you!",
+	"There's room for you inside!",
 	"Out of my way!",
 	"Its a busy day!",
 	"I've got things on my mind!",
@@ -534,9 +533,10 @@ local funMessages = {
 	
 	--Talking Heads
 	--
+	
 	--Stop Making Sense
 	"Face up to the facts!",
-	"Can't relaz!",
+	"Can't relax!",
 	"Don't touch me!",
 	"I'm a live wire!",
 	"Qu'est-ce que c'est?",
@@ -546,6 +546,7 @@ local funMessages = {
 
 	--
 	"You can talk just like me!",
+	"Show me what you can do!",
 
 	--
 	"What a bad picture!",
@@ -558,6 +559,7 @@ local funMessages = {
 	"Putting them on TV!",
 
 	--
+	"You must be having fun!",
 	"What's the matter with him?",
 
 	--
@@ -567,7 +569,13 @@ local funMessages = {
 	"Strange but not a stranger!",
 	"I'm an ordinary guy!",
 	"Hold tight!",
+	"Wait 'til the party's over!",
+	"We're in for nasty weather!",
+	"There has got to be a way!",
 	"Heres your ticket, pack your bag!",
+	"Transportation is here!",
+	"I don't know what you expect!",
+	"Staring into the TV set!",
 	"Fighting fire with fire!",
 
 	--
@@ -577,9 +585,17 @@ local funMessages = {
 	"This ain't no party!",
 	"This ain't no disco!",
 	"This ain't no foolin' around!",
+	"I ain't got time for that now!",
 	"Transmit the message!",
 	"To the receiver!",
+	"Don't even know my real name!",
 	"Everything's ready to roll!",
+	"Ain't got no speakers!",
+	"Ain't got no headphones!",
+	"Ain't got no records to play!",
+	"Don't get exhausted!",
+	"I'll do some driving!",
+	"You ought to get you some sleep!",
 
 	--
 	"Wait a minute!",
@@ -600,16 +616,29 @@ local funMessages = {
 	"Check this out!",
 	"Don't be so slick!",
 	"We have nothing in our pockets!",
+	"Makin' flippy floppy!",
+	"Tryin' to do my best!",
+	"Lock the door!",
+	"We kill the beast!",
+	"Kill it!",
 
 	--
 	"Let me tell you a story!",
+	"No dust!",
+	"No rocks!",
 	"Let's go!",
+	"Click Click!",
+	"See ya later!",
+	"No time to rest!",
+	"Risky business!",
 
 	--
 	"I'm dressed up so nice!",
 	"I'm doing my best!",
 	"I'm starting over!",
 	"Starting over in another place!",
+	"Big chief with a golden crown!",
+	"Rings on his fingers!",
 
 	--
 	"Home is where I want to be!",
@@ -628,6 +657,8 @@ local funMessages = {
 	--
 	"Who took the money?",
 	"Who took the money away?",
+	"It's always showtime!",
+	"Here at the edge of the stage"!
 	"Wake up and wonder!",
 	"What was the place?",
 	"What was the name?",
@@ -811,6 +842,12 @@ local funMessages = {
 	"Greasy fingers smearing shabby clothes!",
 	"Drying in the cold sun!",
 	"Feeling like a dead duck!",
+	"Do you still remember?",
+	"Decembers foggy freeze!",
+	"Feeling alone!".
+	"The armys up the road!",
+	"Salvation a la mode!",
+	"A cup of tea!",
 
 	--
 	"Really don't mind if you sit this one out!",
@@ -905,7 +942,77 @@ local funMessages = {
 	"The regular crowd shuffles in!",
 	"He's quick with a joke!",
 
+	
+	
+	--The Moody Blues
+	--
+	"Why do we never get an answer?",
+	"It's not the say that you say it...",
+	"It's more the way that you mean it!",
+	"I'm looking for someone to change my life!",
+	"I'm looking for a miricale in my life!",
+	
+	--
+	"How is it we are here?",
+	"On this path we walk!",
+	"Mens mighty mine machines!",
+	"Digging in the ground!",
+	"Stealing rare minerals!",
+	"Where they can be found!",
 
+	--
+	"Ask the mirror on the wall!",
+	"Whos the biggest fool of all!",
+	
+	--
+	"Its alright!",
+	
+	--
+	"It's up to you!",
+	
+	--
+	"A beam of light will fill your head!",
+	
+	
+	--The Eagles
+	--
+	"A dark desert highway!",
+	"Cool wind in my hair!",
+	"Rising up through the air!",
+	"Up ahead in the distance!",
+	"I saw a shimmering light!",
+	"My head grew heavy and my sight grew dim!",
+	"I had to stop for the night!",
+	"There she stood in the doorway!",
+	"I heard the mission bell!",
+	"This could be heaven or this could be hell!",
+	"She light up a candle!",
+	"She showed me the way!",
+	"Voices down the corridor!",
+	"I thought I heard them!",
+	"Welcome to the Hotel California!",
+	"Such a lovey place!",
+	"Any time of year!",
+	"You can find it here!",
+	"She got the Mercedes bends!",
+	"They dance in the courtyard!",
+	"Some dance to remember!",
+	"Some dance to forget!",
+	"Please bring me my wine!",
+	"We haven't had that spirit here since nineteen sixty nine!",
+	"Wake you up in the middle of the night!",
+	"We are all just prisioners here!",
+	"Of our own device!",
+	"In the master's chambers!",
+	"They gather for the feast!",
+	"Stab it with their steely knives!",
+	"Running for the door!",
+	"The place I was before!",
+	"'Relax', said the night man!",
+	"We are programmed to receive!",
+	"You can check-out any time you like!",
+	"But you can never leave!",
+	
 	--Other
 	--
 	"Kinghts in armor!",
