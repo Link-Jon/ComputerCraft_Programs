@@ -844,7 +844,7 @@ local funMessages = {
 	"Feeling like a dead duck!",
 	"Do you still remember?",
 	"Decembers foggy freeze!",
-	"Feeling alone!".
+	"Feeling alone!",
 	"The armys up the road!",
 	"Salvation a la mode!",
 	"A cup of tea!",
