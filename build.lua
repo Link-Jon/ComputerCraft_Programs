@@ -75,6 +75,17 @@ function line(L)
     --print("Line done.")
 end
 
+function lineFromBelow(L)
+    --print("Building "..L.." long line")
+    for i=1,L-1 do
+        slot()
+        turtle.placeUp()
+        JoshAPI.forward()
+    end
+    turtle.placeUp()
+    --print("Line done.")
+end
+
 function lineUp(H,goDown)
     --print("Building "..H.." high line")
     for i=1,H do
@@ -202,7 +213,7 @@ if doText then
     print("-----------------------")
     print("What Shape?")
     print("Options:")
-    print("line, wallA, wallB, box, platform, stairs, stairsDown, lineUp")
+    print("line, wallA, wallB, box, platform, stairs, stairsDown, lineUp, linefrombelow")
     
     choice = inputStr()
     
@@ -222,6 +233,18 @@ if choice == "line" then
         l = getArg(2)
     end
     line(l)
+
+elseif choice == "linefrombelow" then
+	if doText then
+        print("Place turtle facing build direction.")
+        print("------------------------------------")
+        print("Length?")
+        l = inputNum()
+    else
+        l = getArg(2)
+    end
+    lineFromBelow(l) 
+
 
 elseif choice == "stairs" then
     if doText then
