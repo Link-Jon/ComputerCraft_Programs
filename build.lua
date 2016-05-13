@@ -196,6 +196,23 @@ function platform(L,W)
     line(L)
 end
 
+function platformFromBelow(L,W)
+    --print("Building "..L.." x "..W.." platform")
+    for i=1,W-1 do
+        lineFromBelow(L)
+        if i%2 == 1 then
+            turtle.turnRight()
+            JoshAPI.forward()
+            turtle.turnRight()
+        elseif i%2 == 0 then
+            turtle.turnLeft()
+            JoshAPI.forward()
+            turtle.turnLeft()
+        end
+    end
+    lineFromBelow(L)
+end
+
 JoshAPI.cleanTerm()
 
 --local options = {"line", "wallA", "wallB", "box", "platform", "stairs", "stairsdown", "lineup"}
@@ -343,6 +360,22 @@ elseif choice == "platform" then
     end
     
     platform(l,w)
+	
+	
+elseif choice == "platformfrombelow" then
+    if doText then
+        print("Place turtle in bottom left corner.")
+        print("-----------------------------------")
+        print("Length? (Sides perpendicular to front of turtle)")
+        l=inputNum()
+        print("Width? (Sides parallel to front of turtle)")
+        w=inputNum()
+    else
+        l = getArg(2)
+        w = getArg(3)
+    end
+    
+    platformFromBelow(l,w)
     
 elseif choice == "lineup" then
     if doText then
