@@ -298,8 +298,8 @@ end
 
 function platform(L,W)
     print("Unbiulding "..L.." x "..W.." platform")
-    for i=1,L-1 do
-        line(W)
+    for i=1,W-1 do
+        line(L)
         if i%2 == 1 then
             turtle.turnRight()
             myForward()
@@ -310,7 +310,7 @@ function platform(L,W)
             turtle.turnLeft()
         end
     end
-    line(W)
+    line(L)
 end
 
 term.clear()
@@ -431,9 +431,9 @@ elseif choice == "platform" then
     if doText then
         print("Place turtle in bottom left corner.")
         print("-----------------------------------")
-        print("Length? (Sides parallel to front of turtle)")
+        print("Length? (Sides perpendicular to front of turtle)")
         l=inputNum()
-        print("Width? (Sides perpendicular to front of turtle)")
+        print("Width? (Sides parallel to front of turtle)")
         w=inputNum()
     else
         l = getArg(2)

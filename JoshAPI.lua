@@ -220,7 +220,7 @@ local funMessages = {
 	"System Status: Redstone error detected",
 	"CraftOS [Version number]",
 	"No bootable device -- insert boot disk and press any key",
-	"The SMART hard disk check has detected an imminent failure. To ensure not data loss, please backup the content immediately and run the Hard Disk Test in System Diagnostics.",
+	"The SMART hard disk check has detected an imminent failure.", --To ensure not data loss, please backup the content immediately and run the Hard Disk Test in System Diagnostics.",
 	"F2 - System Diagnostics",
 	"ENTER - Continue Startup",
 	"Current mode: Safe Mode with Command Prompt",
@@ -238,7 +238,6 @@ local funMessages = {
 	"0110100001101001",
 	"How are you today?",
 	"The world time is currently " .. os.time(),
-	"WARNING: Loss of some clever startup messages detected!",
 	"...!",
 	"I've been waiting for you",
 	"Behind you!",
@@ -283,6 +282,15 @@ local funMessages = {
 	"This is not the startup message you are looking for.",
 	"Seeking Admin...",
 	"0101000101110101011010010111001100100000011000110111010101110011011101000110111101100100011010010110010101110100001000000110100101110000011100110110111101110011001000000110001101110101011100110111010001101111011001000110010101110011",
+	"I know!",
+	"You know!",
+	"I'm not telling the truth!",
+	"I know, you know!",
+	"They just don't have any proof!",
+	"Embrace the deception!",
+	"Learn how to bend!",
+	"Your worst inhibitions tend to psych you out in the end!",
+	"Bazinga!",
 
 	--Harry Potter
 	"I will have order.",
@@ -508,7 +516,15 @@ local funMessages = {
 	"You know you're nobody's fool!",
 
 	--
-	"Hey you",
+	"Hey you...",
+	"Out there in the cold!",
+	"Getting lonly!",
+	"Getting old!",
+	"Can you feel me?",
+	"Standing in the aisles!",
+	"Itchy feet!",
+	"Fading smiles!",
+	"Don't give in without a fight!",
 
 	--
 	"You! Yes, you!",
@@ -831,11 +847,26 @@ local funMessages = {
 
 	--Jethro Tull
 	--
+	"Walking though forests!",
 	"Palm tree apartments!",
+	"Scoff at the monkeys!",
+	"Dark tents!",
+	"Down by the waterhole!",
+	"Saving their rasins for Sunday!",
+	"They're fast but they're lazy!",
 	"Thats alright by me!",
 
 	--
 	"The shuffling madness!",
+	"The all-time loser!",
+	"Headlong to his death!",
+	"Feel the piston scraping!",
+	"Steam breaking on his brow!",
+	"He stole the handle!",
+	"The train!",
+	"It won't stop going!",
+	"No way to slow down!",
+	"The train, it won't stop going!",
 
 	--
 	"Sitting on the park bench!",
@@ -844,10 +875,21 @@ local funMessages = {
 	"Feeling like a dead duck!",
 	"Do you still remember?",
 	"Decembers foggy freeze!",
+	"The ice that clings on to your beard!",
+	"Deep sea diver sounds!",
+	"The flowers bloom like madness in the spring!",
+	"Sun steaking cold!",
+	"An old man wandering lonely!",
+	"Taking time the oly way he knows!",
+	"Leg hurting bad!",
+	"He bends to pick a dog end!",
 	"Feeling alone!",
 	"The armys up the road!",
 	"Salvation a la mode!",
 	"A cup of tea!",
+	"Aqualung, my friend!",
+	"Don't you start away uneasy!",
+	"You poor old sod!",
 
 	--
 	"Really don't mind if you sit this one out!",
@@ -925,9 +967,26 @@ local funMessages = {
 	--
 	"What is this?",
 	"Figure in black!",
+	"Points at me!",
+	"Turn round quick!",
+	"Start to run!",
+	"I'm the chosen one!",
+	"Oh no!",
+	"Big black shape!",
+	"Eyes of fire!",
+	"Telling people their desire!",
 
 	--
 	"Misty morning, clouds in the sky!",
+	"Without warning!",
+	"A wizard walks by!",
+	"Casting his shadow!",
+	"Weaving his spell!",
+	"Funny clothes!",
+	"Tinkining bell!",
+	"Never talking!",
+	"Just keeps walking!",
+	"Spreading his magic!",
 
 	--
 	"Late last night!",
@@ -1006,12 +1065,14 @@ local funMessages = {
 	"In the master's chambers!",
 	"They gather for the feast!",
 	"Stab it with their steely knives!",
+	"Just can't kill the beast!",
 	"Running for the door!",
+	"Find the passage back!",
 	"The place I was before!",
 	"'Relax', said the night man!",
 	"We are programmed to receive!",
 	"You can check-out any time you like!",
-	"But you can never leave!",
+	"You can never leave!",
 	
 	--Other
 	--
@@ -1037,10 +1098,6 @@ local funMessages = {
 
 	--
 	"I feel free!",
-
-	--
-	"You can checkout anytime you like!",
-	"You can never leave!",
 
 	--
 	"Bird is the word!",
