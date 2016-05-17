@@ -110,10 +110,13 @@ function down(num) --Turtle
 	end
 end
 
-function dropThings() --Turtle
+function dropThings(from, to) --Turtle
 	if not turtle then return false end
 
-	for i=1,16 do
+	if from == nil or from < 1 then from = 1 end
+	if to == nil or to > 16 then to = 16 end
+	
+	for i=from,to do
 		turtle.select(i)
 		turtle.drop()
 	end
@@ -200,7 +203,6 @@ function password(pass)
 end
 
 function choose(t)
-	
 	return t[math.random(#t)]
 end
 
@@ -407,6 +409,14 @@ local funMessages = {
 
 	--Pink Floyd
 	--
+	"Welcome, my son!",
+	"Welcome to the machine!",
+	"Where have you been?",
+	"It's alright!",
+	"We know where you've been!",
+	"You know you're nobody's fool!",
+
+	--
 	"Come in here!",
 	"Dear boy!",
 	"Have a cigar!",
@@ -425,20 +435,6 @@ local funMessages = {
 	"Riding the gravy train!",
 
 	--
-	"Is there anybody in there?",
-	"Just nod if you can hear me!",
-	"Is there anyone home?",
-	"Come on, now!",
-	"I hear you're feeling down.",
-	"I can ease your pain!",
-	"On your feet again!",
-	"Relax.",
-	"I need some information first!",
-	"Just the basic facts!",
-	"Can you show me where it hurts?",
-	"When I was a child!",
-
-	--
 	"Wish you were here!",
 	"So...",
 	"You think you can tell?",
@@ -452,6 +448,7 @@ local funMessages = {
 	"The same old ground!",
 	"What have we found?",
 
+	--
 	--
 	"Ticking away!",
 	"The moments!",
@@ -472,7 +469,17 @@ local funMessages = {
 	"The song is over!",
 	"I like to be here when I can",
 	"Beside the fire!",
-
+	
+	--
+	"Money!",
+	"It's a gas!",
+	"Grab that cash!",
+	"Make a stash!",
+	"New car, caviar!",
+	"Think I'll buy me a football team!",
+	"So they say!",
+	"I need a lear jet!",
+	
 	--
 	"Us and them!",
 	"We're only ordinary men!",
@@ -495,26 +502,41 @@ local funMessages = {
 	"Out of my way!",
 	"Its a busy day!",
 	"I've got things on my mind!",
-
-
+	
 	--
-	"Money!",
-	"It's a gas!",
-	"Grab that cash!",
-	"Make a stash!",
-	"New car, caviar!",
-	"Think I'll buy me a football team!",
-	"So they say!",
-	"I need a lear jet!",
-
+	"Any colour you like!",
+	"You can have any color you like, as long as it's black!",
+	"You can have any color you like, but they're all blue!",
+	
 	--
-	"Welcome, my son!",
-	"Welcome to the machine!",
-	"Where have you been?",
-	"It's alright!",
-	"We know where you've been!",
-	"You know you're nobody's fool!",
-
+	--
+	"You! Yes, you!",
+	"Stand still laddie!",
+	
+	--
+	"What shall we use to fill the empty spaces?",
+	"Where we used to talk!",
+	"How shall I fill the final spaces?",
+	"How should I complete the wall!",
+	
+	--
+	"I am just a new boy!",
+	"A stranger in this town!",
+	"Where are all the good times?",
+	"Who's gonna show this stranger around?",
+	
+	--
+	"Run to the bedroom!",
+	"The suitcase on the left!",
+	"My favorite axe!",
+	"Don't look so frightened!",
+	"This is just a passing phase!",
+	"One of my bad days!",
+	"Why are you running away?",
+	
+	--
+	"Don't leave me now!",
+	
 	--
 	"Hey you...",
 	"Out there in the cold!",
@@ -527,13 +549,32 @@ local funMessages = {
 	"Don't give in without a fight!",
 
 	--
-	"You! Yes, you!",
-	"Stand still laddie!",
-
+	"Is there anybody out there?",
+	
 	--
-	"Run to the bedroom!",
-	"The suitcase on the left!",
-
+	"Time to go!",
+	
+	--
+	"Is there anybody in there?",
+	"Just nod if you can hear me!",
+	"Is there anyone home?",
+	"Come on, now!",
+	"I hear you're feeling down.",
+	"I can ease your pain!",
+	"On your feet again!",
+	"Relax.",
+	"I need some information first!",
+	"Just the basic facts!",
+	"Can you show me where it hurts?",
+	"When I was a child!",
+	
+	--
+	"The show must go on!",
+	
+	--
+	"I've got some bad news for you sunshine...",
+	"Pink isn't well, he stayed back at the hotel!",
+	
 	--
 	"Good evening!",
 	"Caught red-handed!",

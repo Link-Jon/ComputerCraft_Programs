@@ -4,12 +4,10 @@ function fell()
 	local height = 1
 	
 	turtle.dig()
-	JoshAPI.refuel()
 	JoshAPI.forward()
 	turtle.suck()
 	while turtle.detectUp() do
 		turtle.digUp()
-		JoshAPI.refuel()
 		JoshAPI.up()
 		turtle.suck()
 		height = height+1
@@ -17,7 +15,6 @@ function fell()
 
 	while height > 1 do
 		turtle.digDown()
-		JoshAPI.refuel()
 		JoshAPI.down()
 		turtle.suck()
 		height = height - 1
@@ -48,10 +45,7 @@ function chest()
 	turtle.suck()
 	turtle.turnRight()
 	if turtle.detect() then
-		for i=3, 16 do 
-			turtle.select(i)
-			turtle.drop()
-		end
+		JoshAPI.dropThings(3,16)
 	end
 	turtle.turnRight()
 	turtle.suck()
