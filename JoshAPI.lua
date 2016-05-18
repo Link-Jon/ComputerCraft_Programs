@@ -253,6 +253,40 @@ function password(pass)
 	end
 end
 
+function cleanMonitors(mons)
+	for x=1, #mons do
+		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
+			mon=peripheral.wrap(mons[x])
+			local old = term.redirect(mon)
+
+			cleanTerm()
+			
+			term.redirect(old)
+		end
+	end
+end
+
+function monitorsPrint(mons, text)
+	for x=1, #mons do
+		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
+			mon=peripheral.wrap(mons[x])
+			monitorPrint(mon, text)
+		end
+	end
+end
+
+function monitorPrint(mon, text)
+	local old = term.redirect(mon)
+
+	print(text)
+	term.redirect(old)
+end
+
+function pause()
+	print("Press any key to continue.")
+	os.pullEvent("key")
+end
+
 function choose(t)
 	return t[math.random(#t)]
 end
@@ -448,10 +482,17 @@ local funMessages = {
 	"It's coming to take you away!",
 
 	--
+	"Lady Maddonna!",
 	"Children at your feet!",
+	"Wonder how you manage to make ends meet!",
+	"Who finds the money?",
+	"Who finds the money when you pay the rent?",
+	"Did you think that money was heaven sent?",
 
 	--
 	"Lets all get up and dance to a song!",
+	"It was a hit before your mother was born!",
+	"Your mother should know!",
 
 	--
 	"Don't let me down!",
@@ -460,6 +501,8 @@ local funMessages = {
 
 	--Pink Floyd
 	--
+	
+	--Wish You Were Here
 	"Welcome, my son!",
 	"Welcome to the machine!",
 	"Where have you been?",
@@ -499,7 +542,7 @@ local funMessages = {
 	"The same old ground!",
 	"What have we found?",
 
-	--
+	--The Dark Side of the Moon
 	--
 	"Ticking away!",
 	"The moments!",
@@ -536,7 +579,7 @@ local funMessages = {
 	"We're only ordinary men!",
 	"Me and you!",
 	"Not what we would choose!",
-	"Forward!",
+	"Forward, he cried!",
 	"The front rank died!",
 	"The general sat!",
 	"The lines on the map!",
@@ -551,7 +594,7 @@ local funMessages = {
 	"Listen, son!",
 	"There's room for you inside!",
 	"Out of my way!",
-	"Its a busy day!",
+	"It's a busy day!",
 	"I've got things on my mind!",
 	
 	--
@@ -559,7 +602,7 @@ local funMessages = {
 	"You can have any color you like, as long as it's black!",
 	"You can have any color you like, but they're all blue!",
 	
-	--
+	--The Wall
 	--
 	"You! Yes, you!",
 	"Stand still laddie!",
@@ -638,7 +681,6 @@ local funMessages = {
 
 
 
-	
 	--Talking Heads
 	--
 	
@@ -876,6 +918,7 @@ local funMessages = {
 	"They'll make a fool of you!",
 	
 	
+	
 	--David Bowie
 	--
 	"It's no game!",
@@ -933,7 +976,6 @@ local funMessages = {
 	"I think she's dancing!",
 	"I am a DJ!",
 	"I am what I play!",
-	
 
 
 
@@ -995,6 +1037,7 @@ local funMessages = {
 	"Nothing is easy!",
 
 
+
 	--Elton John
 	--
 	"Hey, kids!",
@@ -1002,12 +1045,17 @@ local funMessages = {
 	"Known to change the weather!",
 	"Solid walls of sound!",
 	"Have you seen them yet?",
-
+	
+	--
+	"It's like trying to find gold in a silver mine!",
+	"It's like trying to drink whiskey from a bottle of wine!",
+	
 	--
 	"Can't lock me in your penthouse!",
 	
 	--
 	"Mars isn't the kind of place to raise your kids!",
+
 
 
 	--Queen
@@ -1031,6 +1079,7 @@ local funMessages = {
 	"Are you satisfied?",
 	"Is your conscience all right?",
 	"Does it plague you at night?",
+
 
 
 	--ELO
@@ -1208,38 +1257,4 @@ local funMessages = {
 
 function getFunMessages()
 	return funMessages
-end
-
-function cleanMonitors(mons)
-	for x=1, #mons do
-		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
-			mon=peripheral.wrap(mons[x])
-			local old = term.redirect(mon)
-
-			cleanTerm()
-			
-			term.redirect(old)
-		end
-	end
-end
-
-function monitorsPrint(mons, text)
-	for x=1, #mons do
-		if peripheral.isPresent(mons[x]) then --dont crash if monitor was removed
-			mon=peripheral.wrap(mons[x])
-			monitorPrint(mon, text)
-		end
-	end
-end
-
-function monitorPrint(mon, text)
-	local old = term.redirect(mon)
-
-	print(text)
-	term.redirect(old)
-end
-
-function pause()
-	print("Press any key to continue.")
-	os.pullEvent("key")
 end
