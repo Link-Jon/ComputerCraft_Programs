@@ -110,6 +110,57 @@ function down(num) --Turtle
 	end
 end
 
+function forwardA(num) --Turtle --A for agressive
+	if not turtle then return false end
+
+	refuel()
+	if num == nil or num <= 0 then num = 1 end
+	for x = 1, num do
+		if not turtle.forward() then
+			if turtle.detect() then
+				turtle.dig()
+			else
+				turtle.attack()
+			end
+			forwardA()
+		end
+	end
+end
+
+function upA(num) --Turtle --A for agressive
+	if not turtle then return false end
+
+	refuel()
+	if num == nil or num <= 0 then num = 1 end
+	for x = 1, num do
+		if not turtle.up() then
+			if turtle.detectUp() then
+				turtle.digUp()
+			else
+				turtle.attackUp()
+			end
+			upA()
+		end
+	end
+end
+
+function downA(num) --Turtle --A for agressive
+	if not turtle then return false end
+
+	refuel()
+	if num == nil or num <= 0 then num = 1 end
+	for x = 1, num do
+		if not turtle.down() then
+			if turtle.detectDown() then
+				turtle.digDown()
+			else
+				turtle.attackDown()
+			end
+			downA()
+		end
+	end
+end
+
 function dropThings(from, to) --Turtle
 	if not turtle then return false end
 
