@@ -1,30 +1,20 @@
 os.loadAPI("JoshAPI")
---build with turtles
 
---TODO:
-    --
 local tArgs = { ... }
 
 function getArg(num)
-    a = tArgs[num]
-    if a == nil then --its nothing
+    a = JoshAPI.parse(tArgs[num])
+    if a == nil then
         print("Arugments error")
         print("Use build with no arguments if you don't know what you're doing")
         error()
-    elseif tonumber(a) ~= nil then --its a number
-        return tonumber(a)
-    elseif string.lower(tostring(a)) == "true" then --its boolean true
-        return true
-    elseif string.lower(tostring(a)) == "false" then --its boolean false
-        return false
-    else --must be string
-        return string.lower(tostring(a))
-    end
+	end
+	return a
 end
 
 function slot()
     function trySlot()
-        for n=2,16 do
+        for n=1,15 do
             if turtle.getItemCount(n) > 0 then
                 turtle.select(n)
                 return true
@@ -40,6 +30,21 @@ function slot()
             sleep(1)
         end
     end
+end
+
+function placeUp()
+	slot()
+	turtle.placeUp()
+end
+
+function placeDown()
+	slot()
+	turtle.placeDown()
+end
+
+function place()
+	slot()
+	turtle.place()
 end
 
 function inputNum()
@@ -65,33 +70,26 @@ function inputStr()
 end
 
 function line(L)
-    --print("Building "..L.." long line")
     for i=1,L-1 do
-        slot()
-        turtle.placeDown()
+        placeDown()
         JoshAPI.forward()
     end
-    turtle.placeDown()
-    --print("Line done.")
+    placeDown()
 end
 
 function lineFromBelow(L)
-    --print("Building "..L.." long line")
     for i=1,L-1 do
         slot()
-        turtle.placeUp()
+        placeUp()
         JoshAPI.forward()
     end
-    turtle.placeUp()
-    --print("Line done.")
+	placeUp()
 end
 
 function lineUp(H,goDown)
-    --print("Building "..H.." high line")
     for i=1,H do
         JoshAPI.up()
-        slot()
-        turtle.placeDown()
+		placeDown()
     end
     
     if goDown then
@@ -100,46 +98,34 @@ function lineUp(H,goDown)
             JoshAPI.down()
         end
     end
-    --print("Line done.")
 end
 
 function stairs(H)
-    --print("Building "..H.." long stairs")
     for i=1,H-1 do
-        slot()
-        turtle.placeDown()
+		placeDown()
         JoshAPI.up()
         JoshAPI.forward()
     end
-    slot()
-    turtle.placeDown()
-    --print("Stairs done.")
+	placeDown()
 end
 
 function stairsDown(H)
-    --print("Building "..H.." long stairs down")
     for i=1,H-1 do
-        slot()
-        turtle.placeDown()
+		placeDown()
         JoshAPI.forward()
         JoshAPI.down()
     end
-    slot()
-    turtle.placeDown()
-    --print("Stairs done.")
+	placeDown()
 end
 
 function wallA(L,H)
-    --print("Building "..L.." long, "..H.." high wall using method A")
     for i=1,L-1 do
         lineUp(H, true)        
     end
     lineUp(H, false)
-    --print("Wall done.")
 end
 
 function wallB(L,H)
-    --print("Building "..L.." long, "..H.." high wall using method B")
     JoshAPI.up()
     for i=1,H-1 do
         line(L)
@@ -148,11 +134,9 @@ function wallB(L,H)
         turtle.turnRight()
     end
     line(L)
-    --print("Wall done.")
 end
 
-function box(L,W,H,makeRoof)
-    --print("Building "..L.." x "..W.." x "..H.." box")
+function box(D,W,H,makeRoof)
     function getDown()
         turtle.turnRight()
         JoshAPI.forward()
@@ -160,13 +144,13 @@ function box(L,W,H,makeRoof)
             JoshAPI.down()
         end
     end
-    wallA(L,H)
+    wallA(D,H)
     getDown()
     
     wallA(W-1,H)
     getDown()
     
-    wallA(L-1,H)
+    wallA(D-1,H)
     getDown()
     
     wallA(W-2,H)
@@ -174,13 +158,11 @@ function box(L,W,H,makeRoof)
     turtle.turnRight()
     
     if makeRoof then
-        platform(L,W)
+        platform(D,W)
     end
-    --print("Box done.")
 end
 
 function platform(L,W)
-    --print("Building "..L.." x "..W.." platform")
     for i=1,W-1 do
         line(L)
         if i%2 == 1 then
@@ -197,7 +179,6 @@ function platform(L,W)
 end
 
 function platformFromBelow(L,W)
-    --print("Building "..L.." x "..W.." platform")
     for i=1,W-1 do
         lineFromBelow(L)
         if i%2 == 1 then
@@ -215,8 +196,6 @@ end
 
 JoshAPI.cleanTerm()
 
---local options = {"line", "wallA", "wallB", "box", "platform", "stairs", "stairsdown", "lineup"}
-
 if #tArgs == 0 then
     doText = true
 else
@@ -230,7 +209,7 @@ if doText then
     print("-----------------------")
     print("What Shape?")
     print("Options:")
-    print("line, wallA, wallB, box, platform, stairs, stairsDown, lineUp, linefrombelow")
+    print("line, wallA, wallB, box, platform, stairs, stairsDown, lineUp, lineFromBelow, platformFromBelow")
     
     choice = inputStr()
     
@@ -289,7 +268,7 @@ elseif choice == "stairsdown" then
     
 elseif choice == "walla" then
     if doText then
-        print("Method A - build line by line")
+        print("Method A - build vertical line by line")
         print("Place turtle facing build direction.")
         print("------------------------------------")
         print("Length?")
@@ -321,9 +300,9 @@ elseif choice == "box" then
     if doText then
         print("Place turtle in lower left corner.")
         print("----------------------------------")
-        print("Length? (Sides parallel to front of turtle)")
-        l=inputNum()
-        print("Width? (Sides perpendicular to front of turtle)")
+        print("Depth? (Sides perpendicular to front of turtle)")
+        d=inputNum()
+        print("Width? (Sides parallel to front of turtle)")
         w=inputNum()
         print("Height?")
         h = inputNum()
@@ -338,13 +317,13 @@ elseif choice == "box" then
             r = false
         end
     else
-        l = getArg(2)
+        d = getArg(2)
         w = getArg(3)
         h = getArg(4)
         r = getArg(5)
     end
     
-    box(l,w,h,r)
+    box(d,w,h,r)
 
 elseif choice == "platform" then
     if doText then
@@ -379,6 +358,8 @@ elseif choice == "platformfrombelow" then
     
 elseif choice == "lineup" then
     if doText then
+		print("Verical line")
+        print("-----------------------------------")
         print("Height?")
         h=inputNum()
         print("Go down after? y/n")
@@ -407,4 +388,3 @@ else
     end
     error()
 end
-
