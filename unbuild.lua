@@ -129,15 +129,15 @@ function wallB(L,H)
     line(L)
 end
 
-function box(L,W,H,makeRoof)
+function box(D,W,H,makeRoof)
     function getDown()
         for x=1,H-1 do
             JoshAPI.downA()
         end
     end
 	
-	for i=1,L do
-        wallA(W, H)
+	for i=1,W do
+        wallA(D, H)
         if i%2 == 1 then
             turtle.turnRight()
             JoshAPI.forwardA()
@@ -150,9 +150,9 @@ function box(L,W,H,makeRoof)
     end
 end
 
-function platform(L,W)
+function platform(D,W)
     for i=1,W-1 do
-        line(L)
+        line(D)
         if i%2 == 1 then
             turtle.turnRight()
             JoshAPI.forwardA()
@@ -163,7 +163,7 @@ function platform(L,W)
             turtle.turnLeft()
         end
     end
-    line(L)
+    line(D)
 end
 
 JoshAPI.cleanTerm()
@@ -269,8 +269,8 @@ elseif choice == "box" then
         h = inputNum()
         
     else
-        w = getArg(2)
-        d = getArg(3)
+        d = getArg(2)
+        w = getArg(3)
         h = getArg(4)
     end
     
@@ -280,16 +280,16 @@ elseif choice == "platform" then
     if doText then
         print("Place turtle in bottom left corner.")
         print("-----------------------------------")
-        print("Length? (Sides perpendicular to front of turtle)")
-        l = inputNum()
+        print("Depth? (Sides perpendicular to front of turtle)")
+        d = inputNum()
         print("Width? (Sides parallel to front of turtle)")
         w = inputNum()
     else
-        l = getArg(2)
+        d = getArg(2)
         w = getArg(3)
     end
     
-    platform(l,w)
+    platform(d,w)
     
 elseif choice == "lineup" then
     if doText then
