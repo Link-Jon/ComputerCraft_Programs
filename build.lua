@@ -364,9 +364,9 @@ elseif choice == "lineup" then
         h=inputNum()
         print("Go down after? y/n")
         d = inputStr()
-        if d == "y" or r == "yes" then
+        if d == "y" or d == "yes" then
             d = true
-        elseif r == "n" or r == "no" then
+        elseif r == "n" or d == "no" then
             d = false
         else
             print("Boolean error, will go down")
